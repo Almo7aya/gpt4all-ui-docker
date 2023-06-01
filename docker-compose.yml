@@ -9,5 +9,8 @@ services:
       - ${LOCAL_MODEL_DIR:-./models}:/srv/models
       - ./configs:/srv/configs
       - ./personalities:/srv/personalities
-    ports: 
-      - "9600:9600"
+
+networks:
+  default:
+    external: true
+    name: frontend
